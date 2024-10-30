@@ -1,0 +1,8 @@
+1. complete the theme switcher
+2. local storage add
+3. drag and drop 
+4. cross btn functionality 
+5. refactoring 
+6. optimization
+7. hover effects 
+8. loading responsiveness and dark light mode themes  through js 

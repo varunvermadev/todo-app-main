@@ -1,0 +1,261 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --dark-blue: hsl(235, 21%, 11%);
+    --dark-desaturated-blue: hsl(235, 24%, 19%);
+    --dark-light-grayish-blue: hsl(234, 39%, 85%);
+    --dark-light-grayish-blue-hover: hsl(236, 33%, 92%);
+    -dark-dark-grayish-blue-hover: hsl(234, 11%, 52%);
+    --dark-very-dark-grayish-blue: hsl(233, 14%, 35%);
+    --dark-dark-grayish-blue: hsl(237, 14%, 26%);
+    --primary-blue : hsl(220,98%,61%);
+    --primary-bg : linear-gradient(135deg,hsl(192,100%,67%),hsl(280,87%,65%));
+
+}
+
+html {
+    font-size: 62.5%;
+
+}
+
+@media screen and (max-width : 660px){
+    html{
+        font-size: 50%;
+    }
+}
+
+
+body {
+    font-size: 1.8rem;
+    position:relative;
+    background : url('images/bg-desktop-dark.jpg') 0 0/100% 50vh  no-repeat,
+    var(--dark-blue);
+    color:var(--dark-light-grayish-blue);
+    font-family: 'Josefin Sans';
+    
+}
+
+#app{
+
+    width:60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:5rem;
+    gap:5rem;
+    margin:0 auto;
+    min-height: 80vh;
+
+}
+
+@media screen and (max-width : 840px){
+    #app{
+        width:75vw;
+        min-height: 90vh;
+    }
+}
+@media screen and (max-width : 570px){
+
+    #app{
+        width : 95vw;
+    }
+   
+
+}
+
+
+#header .heading--box{
+
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    align-items: center;
+
+}
+
+#header #input__todo{
+
+    display: flex;
+    gap:2rem;
+    background:var(--dark-desaturated-blue);
+    padding: 2rem;
+    border-radius: .5rem;
+
+}
+
+.theme--btns .theme--btn{
+    display:flex;
+
+    background:none;
+    outline:none;
+    border:none;
+    position:relative;
+    cursor:pointer;
+}
+
+.theme--btn svg{
+    scale:1;
+}
+
+.theme--btn.btn--dark{
+    display: none;
+}
+
+
+
+
+
+#input__todo input[type='submit']{
+    width:2.5rem;
+    height:2.5rem;
+    border: 1px solid var(--dark-very-dark-grayish-blue);
+    outline:none;
+    background:none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#input__todo input[type='text']{
+    background:none;
+    outline:none;
+    border:none;
+    color:var(--dark-light-grayish-blue);
+    font-size: 1.8rem;
+    width:100%;
+}
+
+
+#main{
+    background:var(--dark-desaturated-blue);
+}
+
+#main .main__header{
+    position:relative;
+}
+
+.tasks__list{
+    background:var(--dark-desaturated-blue);
+    
+    list-style-type: none;
+}
+
+.tasks__list .task{
+    border : 1px solid ;
+    border-width: 0px 0 1px 0;
+    padding: 2rem;
+    display: flex;
+    gap:2rem;
+    align-items: center;
+    position:relative;
+}
+
+.task input[type='checkbox']{
+    appearance:  none;
+    width:2.5rem;
+    height:2.5rem;
+    border: 1px solid var(--dark-very-dark-grayish-blue);
+    border-radius: 50%;
+    transition : all .2s;
+    background-size: 0;
+    background-position: 20% 100%;
+    cursor: pointer;
+}
+
+.task label{
+
+    color:inherit;
+    cursor:pointer;
+    width:100%;
+    
+}
+
+
+.task input[type='checkbox']:checked{
+    background: url('images/icon-check.svg') center / 50%,var(--primary-bg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+
+}
+.task input[type='text']{
+    width:100%;
+}
+
+.task:has(>input[type='checkbox']:checked) input[type='text']{
+    text-decoration: line-through;
+}
+
+#main .main__footer{
+    display: flex;
+    font-size: 1.4rem;
+    padding: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    position:relative;
+    
+}
+
+.btn__container{
+    display: flex;
+    gap:2rem;
+}
+
+
+
+.btn,
+.clear{
+    border:none;
+    background:none;
+    outline:none;
+    color:inherit;
+    text-decoration: none;
+    cursor:pointer;
+    transition:all .2s;
+}
+.btn:hover,.btn.active{
+    text-shadow: 0 0 1px var(--primary-blue);
+    color:var(--primary-blue);
+    
+}
+
+
+@media screen and (max-width : 460px) {
+    .btn__container{
+        width:100%;
+        position:absolute;
+        top:calc(100% + 3rem);
+        left:0;
+        padding: 2rem;
+    background:var(--dark-desaturated-blue);
+        
+    display: flex;
+    justify-content: center;
+    }
+
+    .attribution{
+        position:absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top:calc(100% + 3rem);
+        left:0;
+        width:100%;
+        margin-bottom: 3rem;
+    }
+    body{
+        background : url('images/bg-desktop-dark.jpg') 0 0/100% 30vh  no-repeat,
+        var(--dark-blue);
+    }
+
+    #app{
+        padding:2rem;
+        justify-content: flex-start;
+        margin-top:3rem;
+    }
+
+}
